@@ -15,16 +15,16 @@
       --texte: #0e3a2b;
       --gris-doux: #f4faf6;
     }
- 
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
     body {
       background: var(--gris-doux);
       font-family: 'DM Sans', sans-serif;
       color: var(--texte);
       min-height: 100vh;
     }
- 
+
     /* HEADER */
     .header {
       background: var(--vert-fonce);
@@ -97,7 +97,7 @@
       border-radius: 50%;
       background: var(--vert-clair);
     }
- 
+
     /* PROGRESSION */
     .progression-bar {
       background: var(--vert-fonce);
@@ -134,14 +134,14 @@
       color: var(--vert-clair);
       white-space: nowrap;
     }
- 
+
     /* CONTENU */
     .content {
       padding: 2rem 1rem 4rem;
       max-width: 680px;
       margin: 0 auto;
     }
- 
+
     .intro-text {
       font-size: 14px;
       color: #4a7a5a;
@@ -150,12 +150,12 @@
       margin-bottom: 2rem;
       line-height: 1.6;
     }
- 
+
     /* PARCOURS VERTICAL */
     .parcours {
       position: relative;
     }
- 
+
     /* Ligne verticale centrale */
     .parcours::before {
       content: '';
@@ -167,7 +167,7 @@
       background: linear-gradient(to bottom, var(--vert-clair), #cce8d8);
       z-index: 0;
     }
- 
+
     /* ÉTAPE */
     .step {
       display: flex;
@@ -176,7 +176,7 @@
       position: relative;
       cursor: pointer;
     }
- 
+
     /* Numéro/icône de l'étape */
     .step-num {
       width: 46px;
@@ -195,13 +195,13 @@
       z-index: 1;
       transition: background 0.25s, border-color 0.25s, color 0.25s;
     }
- 
+
     .step.checked .step-num {
       background: var(--vert-clair);
       border-color: var(--vert-clair);
       color: var(--texte);
     }
- 
+
     /* Carte de l'étape */
     .step-card {
       flex: 1;
@@ -211,17 +211,17 @@
       padding: 1rem 1.1rem;
       transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     }
- 
+
     .step:hover .step-card {
       border-color: var(--vert-moyen);
       box-shadow: 0 4px 16px rgba(26,92,71,0.1);
     }
- 
+
     .step.checked .step-card {
       border-color: var(--vert-clair);
       background: #f4fdf0;
     }
- 
+
     .step-top {
       display: flex;
       align-items: center;
@@ -230,7 +230,7 @@
       flex-wrap: wrap;
       gap: 6px;
     }
- 
+
     .step-cat {
       font-size: 10px;
       font-weight: 600;
@@ -243,12 +243,12 @@
     .cat-demo      { background: #fff3d8; color: #7a4a00; }
     .cat-rencontre { background: #f0e8ff; color: #4a1a80; }
     .cat-info      { background: #ddeeff; color: #1a4080; }
- 
+
     .step-lieu {
       font-size: 11px;
       color: #6a9a7a;
     }
- 
+
     .step-title {
       font-family: 'Syne', sans-serif;
       font-size: 15px;
@@ -258,21 +258,21 @@
       line-height: 1.3;
       transition: opacity 0.2s;
     }
- 
+
     .step.checked .step-title {
       text-decoration: line-through;
       opacity: 0.5;
     }
- 
+
     .step-desc {
       font-size: 13px;
       color: #5a7a6a;
       font-weight: 300;
       line-height: 1.5;
     }
- 
+
     .step.checked .step-desc { opacity: 0.5; }
- 
+
     /* BADGE COMPLÉTÉ */
     .badge-complet {
       display: none;
@@ -287,7 +287,7 @@
       border-radius: 14px;
       border: 1.5px solid rgba(168,212,78,0.4);
     }
- 
+
     /* RESET */
     .reset-btn {
       display: block;
@@ -304,7 +304,7 @@
       transition: background 0.2s;
     }
     .reset-btn:hover { background: #e8f5ee; }
- 
+
     /* FOOTER */
     .page-footer {
       background: var(--vert-fonce);
@@ -317,7 +317,7 @@
   </style>
 </head>
 <body>
- 
+
   <div class="header">
     <svg class="header-svg" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <path d="M400,0 Q340,-10 300,50 Q260,110 330,150 Q370,120 400,70 Z" fill="#a8d44e" opacity="0.3"/>
@@ -327,148 +327,226 @@
     </svg>
     <div class="header-tag">29 Avril 2026 · Journée spéciale</div>
     <div class="header-title">Printemps du<br><span>Numérique</span><br>du Vermandois</div>
-    <div class="header-sub">Organisé par l'AVES · La Cocotte · Bohain-en-Vermandois</div>
+    <div class="header-sub">Organisé par l'AVES & Devenir en Vermandois · Bohain-en-Vermandois</div>
     <div class="header-infos">
       <div class="header-info-pill"><span class="dot"></span>Entrée libre</div>
       <div class="header-info-pill"><span class="dot"></span>Toute la journée</div>
       <div class="header-info-pill"><span class="dot"></span>La Cocotte</div>
     </div>
   </div>
- 
+
   <div class="progression-bar">
     <span class="progression-label">Ma progression</span>
     <div class="bar-wrap"><div class="bar-fill" id="bar"></div></div>
-    <span class="progression-count" id="count">0 / 7</span>
+    <span class="progression-count" id="count">0 / 12</span>
   </div>
- 
+
   <div class="content">
- 
-    <p class="intro-text">Parcourez les étapes à votre rythme et cochez celles que vous avez faites !</p>
- 
-    <div class="parcours">
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">1</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-info">Découverte</span>
-            <span class="step-lieu">📍 Accueil</span>
-          </div>
-          <div class="step-title">Bienvenue à La Cocotte !</div>
-          <div class="step-desc">Prenez connaissance du lieu, rencontrez l'équipe de l'AVES et découvrez les activités proposées tout au long de la journée.</div>
-        </div>
+
+    <p class="intro-text">Parcourez les ateliers à votre rythme et cochez ceux que vous avez faits !</p>
+
+    <!-- SECTION DEVENIR -->
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;">
+        <span style="background:#1a5c47;color:#a8d44e;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">DEVENIR</span>
+        <div style="flex:1;height:1px;background:#cce8d8;"></div>
       </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">2</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-atelier">Atelier</span>
-            <span class="step-lieu">📍 Espace informatique</span>
+
+      <div class="parcours">
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">1</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-atelier">Atelier</span>
+              <span class="step-lieu">📍 Centre ressources numériques</span>
+            </div>
+            <div class="step-title">Créer son CV</div>
+            <div class="step-desc">Logiciels, applications… Venez découvrir les outils pour créer et enrichir votre CV !</div>
           </div>
-          <div class="step-title">Créer ou améliorer son CV en ligne</div>
-          <div class="step-desc">Avec l'aide d'un conseiller, découvrez des outils numériques gratuits pour rédiger et mettre en forme un CV professionnel.</div>
         </div>
-      </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">3</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-demo">Démo</span>
-            <span class="step-lieu">📍 Salle numérique</span>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">2</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-demo">Démo</span>
+              <span class="step-lieu">📍 Studio GoBoulot</span>
+            </div>
+            <div class="step-title">Se préparer à un entretien</div>
+            <div class="step-desc">Développer la confiance en soi, gagner en aisance à l'oral… Une web radio/TV pour faciliter la prise de parole.</div>
           </div>
-          <div class="step-title">Explorer les plateformes d'emploi</div>
-          <div class="step-desc">Démonstration des outils numériques incontournables : France Travail, LinkedIn, Mon Compte Formation. Comment s'en servir concrètement ?</div>
         </div>
-      </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">4</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-atelier">Atelier</span>
-            <span class="step-lieu">📍 Espace informatique</span>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">3</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-atelier">Atelier</span>
+              <span class="step-lieu">📍 Centre ressources numériques</span>
+            </div>
+            <div class="step-title">Développer ses compétences clés</div>
+            <div class="step-desc">Améliorer sa communication écrite, maîtriser les logiciels bureautiques, renforcer son raisonnement mathématique… Découvrez nos plateformes d'apprentissage numériques !</div>
           </div>
-          <div class="step-title">Mes démarches administratives en ligne</div>
-          <div class="step-desc">CAF, Ameli, impôts.gouv... Apprenez à réaliser vos démarches du quotidien sur internet, en toute sécurité.</div>
         </div>
-      </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">5</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-demo">Démo</span>
-            <span class="step-lieu">📍 Salle numérique</span>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">4</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-rencontre">Mini-battle</span>
+              <span class="step-lieu">📍 Salle 1</span>
+            </div>
+            <div class="step-title">Challenger votre culture générale</div>
+            <div class="step-desc">Des mini-battles pour tester vos connaissances générales !</div>
           </div>
-          <div class="step-title">L'intelligence artificielle pour tous</div>
-          <div class="step-desc">Découvrez comment des outils d'IA simples peuvent vous aider à rédiger une lettre de motivation, préparer un entretien ou explorer de nouveaux métiers.</div>
         </div>
+
       </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">6</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-rencontre">Rencontre</span>
-            <span class="step-lieu">📍 Grande salle</span>
-          </div>
-          <div class="step-title">Échangez avec les professionnels</div>
-          <div class="step-desc">Rencontrez des acteurs de l'insertion et du numérique du Vermandois. Posez vos questions, partagez votre expérience, créez des liens.</div>
-        </div>
-      </div>
- 
-      <div class="step" onclick="toggle(this)">
-        <div class="step-num">7</div>
-        <div class="step-card">
-          <div class="step-top">
-            <span class="step-cat cat-info">À emporter</span>
-            <span class="step-lieu">📍 Accueil</span>
-          </div>
-          <div class="step-title">Repartez avec vos ressources !</div>
-          <div class="step-desc">Récupérez votre livret de ressources numériques locales et les coordonnées des structures qui peuvent vous accompagner toute l'année.</div>
-        </div>
-      </div>
- 
     </div>
- 
+
+    <!-- SECTION AVES -->
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;">
+        <span style="background:#1a5c47;color:#9ec8ff;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">AVES</span>
+        <div style="flex:1;height:1px;background:#cce8d8;"></div>
+      </div>
+
+      <div class="parcours">
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">5</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-demo">Démo</span>
+              <span class="step-lieu">📍 Salle AVES</span>
+            </div>
+            <div class="step-title">Développer sa mobilité</div>
+            <div class="step-desc">Simulateur de conduite, séances de code… Les outils pour vous accompagner dans la réussite de votre permis de conduire.</div>
+          </div>
+        </div>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">6</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-atelier">Parcours</span>
+              <span class="step-lieu">📍 La Co'cotte</span>
+            </div>
+            <div class="step-title">Se familiariser avec le numérique</div>
+            <div class="step-desc">Venez suivre notre « Parcours numérique », construit pour acquérir, à chaque étape, de nouvelles compétences et gagner en autonomie.</div>
+          </div>
+        </div>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">7</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-demo">Expérience</span>
+              <span class="step-lieu">📍 La Co'cotte</span>
+            </div>
+            <div class="step-title">Développer ses compétences autrement</div>
+            <div class="step-desc">Le gaming ou comment valoriser ses compétences transverses… Une expérience innovante mise en lumière par les participants.</div>
+          </div>
+        </div>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">8</div>
+          <div class="step-card">
+            <div class="step-top">
+              <span class="step-cat cat-atelier">Atelier</span>
+              <span class="step-lieu">📍 La Co'cotte</span>
+            </div>
+            <div class="step-title">Libérer sa créativité</div>
+            <div class="step-desc">Un espace dédié pour explorer sa créativité à travers le numérique. Venez expérimenter !</div>
+          </div>
+        </div>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">9</div>
+          <div class="step-card" style="border-color:#e8d8f0;">
+            <div class="step-top">
+              <span class="step-cat cat-rencontre">Stand</span>
+              <span class="step-lieu">📍 La Co'cotte</span>
+            </div>
+            <div class="step-title">Rencontre</div>
+            <div class="step-desc">En partenariat avec Devenir en Vermandois, des participants viennent partager leur expérience et présenter leur projet. Venez les rencontrer et découvrir comment le numérique a changé leur parcours d'insertion.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION PARKING -->
+    <div style="margin-bottom:1rem;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;">
+        <span style="background:#1a5c47;color:#ffd580;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;">EN PLEIN AIR · Parking</span>
+        <div style="flex:1;height:1px;background:#cce8d8;"></div>
+      </div>
+
+      <div class="parcours">
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">10</div>
+          <div class="step-card" style="border-color:#f0e8c8;">
+            <div class="step-top">
+              <span class="step-cat" style="background:#fff8e0;color:#7a5a00;">Démo</span>
+              <span class="step-lieu">📍 Parking</span>
+            </div>
+            <div class="step-title">Démonstration de drone</div>
+            <div class="step-desc">Venez découvrir les possibilités offertes par les drones : pilotage, captation d'images, usages professionnels… Une démonstration en plein air à ne pas manquer !</div>
+          </div>
+        </div>
+
+        <div class="step" onclick="toggle(this)">
+          <div class="step-num">11</div>
+          <div class="step-card" style="border-color:#f0e8c8;">
+            <div class="step-top">
+              <span class="step-cat" style="background:#fff8e0;color:#7a5a00;">Jeu coopératif</span>
+              <span class="step-lieu">📍 Fourgon En Terre Connectée</span>
+            </div>
+            <div class="step-title">Keep Talking and Nobody Explodes !</div>
+            <div class="step-desc">Un joueur est piégé avec une bombe à désamorcer, les autres ont le manuel… mais ne voient pas la bombe ! Un jeu coopératif intense qui met à l'épreuve la communication, la réactivité et le travail d'équipe. Parties rapides, ambiance garantie !</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <div class="badge-complet" id="badge">
       🎉 Parcours complété ! Bravo, vous avez tout exploré.
     </div>
- 
+
     <button class="reset-btn" onclick="resetAll()">Réinitialiser mon parcours</button>
- 
+
   </div>
- 
+
   <div class="page-footer">
-    <div class="footer-org">AVES — Association Vermandois Emploi Solidarité</div>
+    <div class="footer-org">Maison de l'emploi et de la formation du pays du Vermandois</div>
     <div class="footer-adresse">6 rue Marcellin Berthelot · 02110 Bohain-en-Vermandois</div>
     <div class="footer-contact">03.23.07.26.67 · contact@aves-vermandois.fr</div>
   </div>
- 
+
   <script>
     const total = document.querySelectorAll('.step').length;
- 
+
     function updateBar() {
       const checked = document.querySelectorAll('.step.checked').length;
       document.getElementById('bar').style.width = (checked / total * 100) + '%';
       document.getElementById('count').textContent = checked + ' / ' + total;
       document.getElementById('badge').style.display = checked === total ? 'block' : 'none';
     }
- 
+
     function toggle(step) {
       step.classList.toggle('checked');
       updateBar();
     }
- 
+
     function resetAll() {
       document.querySelectorAll('.step.checked').forEach(s => s.classList.remove('checked'));
       updateBar();
     }
- 
+
     updateBar();
   </script>
 </body>
 </html>
- 
